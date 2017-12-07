@@ -9,20 +9,36 @@
 /* Begin PBXBuildFile section */
 		2134DFD4D169D094301BB842 /* Pods_HypedBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFAF6D5832AE0DE505C2BA20 /* Pods_HypedBooks.framework */; };
 		617E5D911FD8790F0043EBF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E5D901FD8790F0043EBF8 /* AppDelegate.swift */; };
-		617E5D931FD8790F0043EBF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E5D921FD8790F0043EBF8 /* ViewController.swift */; };
-		617E5D961FD8790F0043EBF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617E5D941FD8790F0043EBF8 /* Main.storyboard */; };
 		617E5D981FD8790F0043EBF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 617E5D971FD8790F0043EBF8 /* Assets.xcassets */; };
 		617E5D9B1FD8790F0043EBF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 617E5D991FD8790F0043EBF8 /* LaunchScreen.storyboard */; };
+		617E5DA41FD8811B0043EBF8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E5DA31FD8811B0043EBF8 /* Router.swift */; };
+		617E5DA81FD882D40043EBF8 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E5DA71FD882D40043EBF8 /* BooksViewController.swift */; };
+		61864D521FD9BD0B001D4B65 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61864D511FD9BD0B001D4B65 /* BookCell.swift */; };
+		61864D551FD9C051001D4B65 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61864D541FD9C051001D4B65 /* UITableView+Reusable.swift */; };
+		61864D571FD9C0FC001D4B65 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61864D561FD9C0FC001D4B65 /* UIView+Shadow.swift */; };
+		61AF86181FD88B8900B372E0 /* BooksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF86171FD88B8900B372E0 /* BooksDataSource.swift */; };
+		61AF86241FD898D300B372E0 /* Target.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF86231FD898D300B372E0 /* Target.swift */; };
+		61AF86261FD898F500B372E0 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF86251FD898F500B372E0 /* NetworkingManager.swift */; };
+		61AF86281FD89ACF00B372E0 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF86271FD89ACF00B372E0 /* Book.swift */; };
+		61AF862A1FD89B1500B372E0 /* JSONable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AF86291FD89B1500B372E0 /* JSONable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		617E5D8D1FD8790F0043EBF8 /* HypedBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypedBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		617E5D901FD8790F0043EBF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		617E5D921FD8790F0043EBF8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		617E5D951FD8790F0043EBF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		617E5D971FD8790F0043EBF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		617E5D9A1FD8790F0043EBF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		617E5D9C1FD8790F0043EBF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		617E5DA31FD8811B0043EBF8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		617E5DA71FD882D40043EBF8 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		61864D511FD9BD0B001D4B65 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		61864D541FD9C051001D4B65 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		61864D561FD9C0FC001D4B65 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		61AF86171FD88B8900B372E0 /* BooksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDataSource.swift; sourceTree = "<group>"; };
+		61AF86231FD898D300B372E0 /* Target.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Target.swift; sourceTree = "<group>"; };
+		61AF86251FD898F500B372E0 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		61AF86271FD89ACF00B372E0 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		61AF86291FD89B1500B372E0 /* JSONable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONable.swift; sourceTree = "<group>"; };
 		89047C3C017590CF1A7EF7DA /* Pods-HypedBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HypedBooks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HypedBooks/Pods-HypedBooks.debug.xcconfig"; sourceTree = "<group>"; };
 		DB79A4BBEE90077F421E1B6B /* Pods-HypedBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HypedBooks.release.xcconfig"; path = "Pods/Target Support Files/Pods-HypedBooks/Pods-HypedBooks.release.xcconfig"; sourceTree = "<group>"; };
 		DFAF6D5832AE0DE505C2BA20 /* Pods_HypedBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HypedBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,14 +77,62 @@
 		617E5D8F1FD8790F0043EBF8 /* HypedBooks */ = {
 			isa = PBXGroup;
 			children = (
+				61864D531FD9C00A001D4B65 /* Extensions */,
+				61AF86221FD898C700B372E0 /* Networking */,
+				617E5DA61FD882BC0043EBF8 /* Models */,
+				617E5DA51FD8829A0043EBF8 /* Books */,
+				617E5DA21FD881080043EBF8 /* Helpers */,
 				617E5D901FD8790F0043EBF8 /* AppDelegate.swift */,
-				617E5D921FD8790F0043EBF8 /* ViewController.swift */,
-				617E5D941FD8790F0043EBF8 /* Main.storyboard */,
 				617E5D971FD8790F0043EBF8 /* Assets.xcassets */,
 				617E5D991FD8790F0043EBF8 /* LaunchScreen.storyboard */,
 				617E5D9C1FD8790F0043EBF8 /* Info.plist */,
 			);
 			path = HypedBooks;
+			sourceTree = "<group>";
+		};
+		617E5DA21FD881080043EBF8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				617E5DA31FD8811B0043EBF8 /* Router.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		617E5DA51FD8829A0043EBF8 /* Books */ = {
+			isa = PBXGroup;
+			children = (
+				617E5DA71FD882D40043EBF8 /* BooksViewController.swift */,
+				61AF86171FD88B8900B372E0 /* BooksDataSource.swift */,
+				61864D511FD9BD0B001D4B65 /* BookCell.swift */,
+			);
+			path = Books;
+			sourceTree = "<group>";
+		};
+		617E5DA61FD882BC0043EBF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				61AF86271FD89ACF00B372E0 /* Book.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		61864D531FD9C00A001D4B65 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61864D541FD9C051001D4B65 /* UITableView+Reusable.swift */,
+				61864D561FD9C0FC001D4B65 /* UIView+Shadow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		61AF86221FD898C700B372E0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				61AF86231FD898D300B372E0 /* Target.swift */,
+				61AF86251FD898F500B372E0 /* NetworkingManager.swift */,
+				61AF86291FD89B1500B372E0 /* JSONable.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		D44031FA9E72CE35A9BF6779 /* Pods */ = {
@@ -152,7 +216,6 @@
 			files = (
 				617E5D9B1FD8790F0043EBF8 /* LaunchScreen.storyboard in Resources */,
 				617E5D981FD8790F0043EBF8 /* Assets.xcassets in Resources */,
-				617E5D961FD8790F0043EBF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,22 +224,20 @@
 /* Begin PBXShellScriptBuildPhase section */
 		7B68FC6F3EA4EC00E88991A9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HypedBooks/Pods-HypedBooks-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -187,7 +248,7 @@
 		};
 		A552E3A636F3FD5A7359BA2B /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -225,7 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				617E5D931FD8790F0043EBF8 /* ViewController.swift in Sources */,
+				61AF86281FD89ACF00B372E0 /* Book.swift in Sources */,
+				61AF86181FD88B8900B372E0 /* BooksDataSource.swift in Sources */,
+				61AF862A1FD89B1500B372E0 /* JSONable.swift in Sources */,
+				61AF86241FD898D300B372E0 /* Target.swift in Sources */,
+				61864D571FD9C0FC001D4B65 /* UIView+Shadow.swift in Sources */,
+				61864D521FD9BD0B001D4B65 /* BookCell.swift in Sources */,
+				617E5DA81FD882D40043EBF8 /* BooksViewController.swift in Sources */,
+				61864D551FD9C051001D4B65 /* UITableView+Reusable.swift in Sources */,
+				61AF86261FD898F500B372E0 /* NetworkingManager.swift in Sources */,
+				617E5DA41FD8811B0043EBF8 /* Router.swift in Sources */,
 				617E5D911FD8790F0043EBF8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,14 +303,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		617E5D941FD8790F0043EBF8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				617E5D951FD8790F0043EBF8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		617E5D991FD8790F0043EBF8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -372,7 +434,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.agerstown.HypedBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -389,7 +451,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.agerstown.HypedBooks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
