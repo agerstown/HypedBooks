@@ -56,6 +56,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6159A9751FD9D81C00221C97 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				617E5D991FD8790F0043EBF8 /* LaunchScreen.storyboard */,
+				617E5D971FD8790F0043EBF8 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		617E5D841FD8790E0043EBF8 = {
 			isa = PBXGroup;
 			children = (
@@ -77,14 +86,13 @@
 		617E5D8F1FD8790F0043EBF8 /* HypedBooks */ = {
 			isa = PBXGroup;
 			children = (
-				61864D531FD9C00A001D4B65 /* Extensions */,
-				61AF86221FD898C700B372E0 /* Networking */,
-				617E5DA61FD882BC0043EBF8 /* Models */,
 				617E5DA51FD8829A0043EBF8 /* Books */,
+				617E5DA61FD882BC0043EBF8 /* Models */,
 				617E5DA21FD881080043EBF8 /* Helpers */,
+				61AF86221FD898C700B372E0 /* Networking */,
+				61864D531FD9C00A001D4B65 /* Extensions */,
+				6159A9751FD9D81C00221C97 /* Resources */,
 				617E5D901FD8790F0043EBF8 /* AppDelegate.swift */,
-				617E5D971FD8790F0043EBF8 /* Assets.xcassets */,
-				617E5D991FD8790F0043EBF8 /* LaunchScreen.storyboard */,
 				617E5D9C1FD8790F0043EBF8 /* Info.plist */,
 			);
 			path = HypedBooks;

@@ -9,21 +9,64 @@
 import SwiftyJSON
 import UIKit
 
+enum BooksLoadingResult {
+  case success
+  case error
+  case noMoreBooks
+}
+
 class BooksDataSource: NSObject {
 
   private var books: [Book] = []
 
-  func loadBooks(forPage page: Int, completion: @escaping (_ success: Bool) -> Void) {
-    NetworkingManager.shared.makeRequest(target: .getPopularBooks(page: 1)) { response in
-      guard let value = response.result.value else {
-        completion(false)
-        return
+  private var hasNextPage = true
+  private var pageNumber = 1
+  private var loading = false
+
+  private let bottomActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+
+  func loadBooks(forPage page: Int, completion: @escaping (_ result: BooksLoadingResult) -> Void) {
+    loading = true
+    NetworkingManager.shared.makeRequest(target: .getPopularBooks(page: page)) { response in
+      self.loading = false
+      switch response.result {
+        case .failure:
+          completion(.error)
+        case .success:
+          guard let value = response.result.value else {
+            completion(.error)
+            return
+          }
+          let json = JSON(value)
+          let booksJSON = json["books"].arrayValue
+          guard !booksJSON.isEmpty else {
+            self.hasNextPage = false
+            completion(.noMoreBooks)
+            return
+          }
+          self.books += booksJSON.flatMap { Book.fromJSON($0) }
+          self.pageNumber += 1
+          completion(.success)
       }
-      
-      let json = JSON(value)
-      let booksJSON = json["books"].arrayValue
-      self.books = booksJSON.flatMap { Book.fromJSON($0) }
-      completion(true)
+    }
+  }
+
+  private func loadMoreBooksIfNecessary(tableView: UITableView, indexPath: IndexPath) {
+    // если сейчас будет отображаться 3-я с конца ячейка, пора грузить следующую страницу с книгами
+    guard tableView.numberOfRows(inSection: indexPath.section) - 3 == indexPath.row else { return }
+    guard hasNextPage, !loading else { return }
+
+    tableView.tableFooterView = bottomActivityIndicator
+    bottomActivityIndicator.startAnimating()
+
+    loadBooks(forPage: pageNumber) { result in
+      self.bottomActivityIndicator.stopAnimating()
+      switch result {
+      case .success:
+        tableView.reloadData()
+      case .noMoreBooks, .error:
+        tableView.tableFooterView = nil
+      }
     }
   }
 }
@@ -38,6 +81,7 @@ extension BooksDataSource: UITableViewDataSource {
     let cell = tableView.dequeue(BookCell.self)
     let book = books[indexPath.row]
     cell.configure(withBook: book)
+    loadMoreBooksIfNecessary(tableView: tableView, indexPath: indexPath)
     return cell
   }
 }

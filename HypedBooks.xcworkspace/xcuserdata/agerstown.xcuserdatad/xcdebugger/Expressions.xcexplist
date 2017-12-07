@@ -3,10 +3,51 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "closure #1 in BooksViewController.tableView(_:willDisplay:forRowAt:):BooksViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "pageNumber">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BooksViewController.tableView(_:willDisplay:forRowAt:):BooksViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "tableView.numberOfRows(inSection: indexPath.section)">
+            </PersistentString>
+            <PersistentString
+               value = "pageNumber">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in BooksDataSource.loadBooks(forPage:):BooksDataSource.swift">
          <PersistentStrings>
             <PersistentString
                value = "json[&quot;books&quot;].arrayValue.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BooksDataSource.loadMoreBooksIfNecessary(tableView:indexPath:):BooksDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "hasNextPage">
+            </PersistentString>
+            <PersistentString
+               value = "loading">
+            </PersistentString>
+            <PersistentString
+               value = "pageNumber">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in BooksDataSource.loadBooks(forPage:completion:):BooksDataSource.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "page">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
