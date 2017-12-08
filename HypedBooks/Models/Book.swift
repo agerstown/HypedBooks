@@ -38,7 +38,10 @@ extension Book: JSONable {
       placeholder = UIImage(data: placeholderData)
     }
 
-    return Book(id: id, title: title, annotation: annotation, authors: authors,
+    var decodedAnnotation = annotation.decodedFromHtml() ?? annotation
+    decodedAnnotation = decodedAnnotation.trimmingCharacters(in: .whitespacesAndNewlines)
+
+    return Book(id: id, title: title, annotation: decodedAnnotation, authors: authors,
                 smallCoverURL: smallCoverURL, placeholder: placeholder)
   }
 }

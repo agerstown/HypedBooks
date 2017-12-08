@@ -40,6 +40,8 @@ class BooksViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    title = "Popular books"
+
     setupTableView()
     setupNoBooksLabel()
     setupActivityIndicator()
@@ -103,6 +105,7 @@ class BooksViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate
 extension BooksViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let book = booksDataSource.getBook(forIndex: indexPath.row) else { return }

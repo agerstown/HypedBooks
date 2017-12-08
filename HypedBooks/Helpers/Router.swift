@@ -20,8 +20,12 @@ class Router {
 
   private func showBooksViewController() {
     let booksViewController = BooksViewController()
-    let navigation = UINavigationController(rootViewController: booksViewController)
-    setRootViewController(navigation, forWindow: window, animated: false)
+    let navigationController = UINavigationController(rootViewController: booksViewController)
+    navigationController.navigationBar.tintColor = .black
+    if #available(iOS 11.0, *) {
+      navigationController.navigationBar.prefersLargeTitles = true
+    }
+    setRootViewController(navigationController, forWindow: window, animated: false)
   }
 
   private func setRootViewController(_ controller: UIViewController, forWindow window: UIWindow, animated: Bool) {

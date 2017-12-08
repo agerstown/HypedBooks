@@ -25,6 +25,7 @@ class BooksDataSource: NSObject {
 
   private let bottomActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
 
+  // MARK: - Data loading
   func loadBooks(forPage page: Int, completion: @escaping (_ result: BooksLoadingResult) -> Void) {
     loading = true
     NetworkingManager.shared.makeRequest(target: .getPopularBooks(page: page)) { response in
@@ -52,12 +53,6 @@ class BooksDataSource: NSObject {
     }
   }
 
-  func resetState() {
-    hasNextPage = true
-    pageNumber = 1
-    loading = false
-  }
-
   private func loadMoreBooksIfNecessary(tableView: UITableView, indexPath: IndexPath) {
     // если сейчас будет отображаться 3-я с конца ячейка, пора грузить следующую страницу с книгами
     guard tableView.numberOfRows(inSection: indexPath.section) - 3 == indexPath.row else { return }
@@ -77,6 +72,12 @@ class BooksDataSource: NSObject {
     }
   }
 
+  func resetState() {
+    hasNextPage = true
+    pageNumber = 1
+    loading = false
+  }
+
   func getBook(forIndex index: Int) -> Book? {
     guard index < books.count else { return nil }
     return books[index]
@@ -91,8 +92,7 @@ extension BooksDataSource: UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeue(BookCell.self)
-    let book = books[indexPath.row]
-    cell.configure(withBook: book)
+    cell.configure(withBook: books[indexPath.row])
     loadMoreBooksIfNecessary(tableView: tableView, indexPath: indexPath)
     return cell
   }

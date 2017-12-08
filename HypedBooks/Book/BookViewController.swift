@@ -47,6 +47,10 @@ class BookViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    if #available(iOS 11.0, *) {
+      navigationItem.largeTitleDisplayMode = .never
+    }
+
     title = bookTitle
 
     setupBookPageWebView()
