@@ -76,6 +76,11 @@ class BooksDataSource: NSObject {
       }
     }
   }
+
+  func getBook(forIndex index: Int) -> Book? {
+    guard index < books.count else { return nil }
+    return books[index]
+  }
 }
 
 // MARK: - UITableViewDataSource

@@ -20,6 +20,7 @@ class BooksViewController: UIViewController {
     tableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
     tableView.registerClass(BookCell.self)
     tableView.dataSource = booksDataSource
+    tableView.delegate = self
     return tableView
   }()
 
@@ -27,6 +28,7 @@ class BooksViewController: UIViewController {
     let label = UILabel()
     label.text = "Не получилось загрузить книги :("
     label.font = UIFont.systemFont(ofSize: 22, weight: .thin)
+    label.textAlignment = .center
     label.numberOfLines = 2
     label.isHidden = true
     return label
@@ -99,4 +101,12 @@ class BooksViewController: UIViewController {
     }
   }
 
+}
+
+extension BooksViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let book = booksDataSource.getBook(forIndex: indexPath.row) else { return }
+    let bookViewController = BookViewController(bookTitle: book.title, bookID: book.id)
+    navigationController?.pushViewController(bookViewController, animated: true)
+  }
 }
