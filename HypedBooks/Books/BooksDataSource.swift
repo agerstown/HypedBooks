@@ -44,11 +44,18 @@ class BooksDataSource: NSObject {
             completion(.noMoreBooks)
             return
           }
+          if page == 1 { self.books.removeAll() }
           self.books += booksJSON.flatMap { Book.fromJSON($0) }
-          self.pageNumber += 1
+          self.pageNumber = page
           completion(.success)
       }
     }
+  }
+
+  func resetState() {
+    hasNextPage = true
+    pageNumber = 1
+    loading = false
   }
 
   private func loadMoreBooksIfNecessary(tableView: UITableView, indexPath: IndexPath) {
@@ -59,7 +66,7 @@ class BooksDataSource: NSObject {
     tableView.tableFooterView = bottomActivityIndicator
     bottomActivityIndicator.startAnimating()
 
-    loadBooks(forPage: pageNumber) { result in
+    loadBooks(forPage: pageNumber + 1) { result in
       self.bottomActivityIndicator.stopAnimating()
       switch result {
       case .success:
