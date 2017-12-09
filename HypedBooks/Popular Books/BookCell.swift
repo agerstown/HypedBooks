@@ -21,7 +21,7 @@ class BookCell: UITableViewCell {
     return view
   }()
 
-  private let coverImageView: UIImageView = {
+  let coverImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.contentMode = .scaleAspectFill
     imageView.layer.cornerRadius = 4
@@ -36,21 +36,21 @@ class BookCell: UITableViewCell {
     return stackView
   }()
 
-  private let titleLabel: UILabel = {
+  let titleLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 18, weight: .semibold)
     label.numberOfLines = 2
     return label
   }()
 
-  private let annotationLabel: UILabel = {
+  let annotationLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 14)
     label.numberOfLines = 3
     return label
   }()
 
-  private let authorsLabel: UILabel = {
+  let authorsLabel: UILabel = {
     let label = UILabel()
     label.font = .systemFont(ofSize: 12, weight: .light)
     label.textColor = .lightGray
@@ -95,16 +95,5 @@ class BookCell: UITableViewCell {
       make.right.top.bottom.equalToSuperview().inset(16)
       make.left.equalTo(coverImageView.snp.right).offset(16)
     }
-  }
-
-  func configure(withBook book: Book) {
-    coverImageView.image = book.placeholder
-    if let url = URL(string: book.smallCoverURL) {
-      Nuke.loadImage(with: url, into: coverImageView)
-    }
-
-    titleLabel.text = book.title
-    annotationLabel.text = book.annotation
-    authorsLabel.text = book.authors
   }
 }

@@ -19,10 +19,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "BooksViewController.tableView(_:numberOfRowsInSection:):BooksViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "booksDataSource.numberOfBooks">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in BooksDataSource.loadBooks(forPage:):BooksDataSource.swift">
          <PersistentStrings>
             <PersistentString
                value = "json[&quot;books&quot;].arrayValue.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookViewController.webView(_:didFailLoadWithError:):BookViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "webView.loading">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookViewController.viewWillAppear(_:):BookViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.safeAreaInsets.top">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -41,26 +65,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BookViewController.viewWillAppear(_:):BookViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "view.safeAreaInsets.top">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "closure #1 in BooksDataSource.loadBooks(forPage:completion:):BooksDataSource.swift">
          <PersistentStrings>
             <PersistentString
                value = "page">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "BookViewController.webView(_:didFailLoadWithError:):BookViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "webView.loading">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -84,10 +92,10 @@
          contextName = "BooksViewController.tableView(_:willDisplay:forRowAt:):BooksViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "pageNumber">
+               value = "tableView.numberOfRows(inSection: indexPath.section)">
             </PersistentString>
             <PersistentString
-               value = "tableView.numberOfRows(inSection: indexPath.section)">
+               value = "pageNumber">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

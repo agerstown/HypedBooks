@@ -7,7 +7,6 @@
 //
 
 import SwiftyJSON
-import UIKit
 
 enum BooksLoadingResult {
   case success
@@ -15,15 +14,29 @@ enum BooksLoadingResult {
   case noMoreBooks
 }
 
-class BooksDataSource: NSObject {
+class BooksDataSource {
 
   private var books: [Book] = []
+
+  var numberOfBooks: Int {
+    return books.count
+  }
 
   private var hasNextPage = true
   private var pageNumber = 1
   private var loading = false
 
-  private let bottomActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+  func resetState() {
+    hasNextPage = true
+    pageNumber = 1
+    loading = false
+    books = []
+  }
+
+  func getBook(forIndex index: Int) -> Book? {
+    guard index < books.count else { return nil }
+    return books[index]
+  }
 
   // MARK: - Data loading
   func loadBooks(forPage page: Int, completion: @escaping (_ result: BooksLoadingResult) -> Void) {
@@ -53,47 +66,11 @@ class BooksDataSource: NSObject {
     }
   }
 
-  private func loadMoreBooksIfNecessary(tableView: UITableView, indexPath: IndexPath) {
-    // если сейчас будет отображаться 3-я с конца ячейка, пора грузить следующую страницу с книгами
-    guard tableView.numberOfRows(inSection: indexPath.section) - 3 == indexPath.row else { return }
+  func loadMoreBooks(completion: @escaping (_ result: BooksLoadingResult) -> Void) {
     guard hasNextPage, !loading else { return }
 
-    tableView.tableFooterView = bottomActivityIndicator
-    bottomActivityIndicator.startAnimating()
-
     loadBooks(forPage: pageNumber + 1) { result in
-      self.bottomActivityIndicator.stopAnimating()
-      switch result {
-      case .success:
-        tableView.reloadData()
-      case .noMoreBooks, .error:
-        tableView.tableFooterView = nil
-      }
+      completion(result)
     }
-  }
-
-  func resetState() {
-    hasNextPage = true
-    pageNumber = 1
-    loading = false
-  }
-
-  func getBook(forIndex index: Int) -> Book? {
-    guard index < books.count else { return nil }
-    return books[index]
-  }
-}
-
-// MARK: - UITableViewDataSource
-extension BooksDataSource: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return books.count
-  }
-
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeue(BookCell.self)
-    cell.configure(withBook: books[indexPath.row])
-    loadMoreBooksIfNecessary(tableView: tableView, indexPath: indexPath)
-    return cell
   }
 }
