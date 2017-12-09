@@ -140,7 +140,10 @@ extension BooksViewController: UITableViewDataSource {
   }
 
   private func configureCell(_ cell: BookCell, withBook book: Book) {
-    cell.coverImageView.image = book.placeholder
+    if let placeholderData = book.placeholderData {
+      cell.coverImageView.image = UIImage(data: placeholderData)
+    }
+
     if let url = URL(string: book.smallCoverURL) {
       Nuke.loadImage(with: url, into: cell.coverImageView)
     }

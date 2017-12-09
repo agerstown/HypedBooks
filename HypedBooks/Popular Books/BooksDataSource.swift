@@ -34,7 +34,7 @@ class BooksDataSource {
   }
 
   func getBook(forIndex index: Int) -> Book? {
-    guard index < books.count else { return nil }
+    guard index >= 0, index < books.count else { return nil }
     return books[index]
   }
 
